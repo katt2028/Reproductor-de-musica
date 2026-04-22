@@ -1,0 +1,25 @@
+<section class=""
+    <div>
+        <img src="" id="album-image" />
+    </div>
+
+    <div>
+        <p class="text-sm opacity-50" id="album"></p>
+        <h2 class="text-lg font-semibold" id="title"></h2>
+    </div>
+
+    <div>
+        <button class="px-20 py-20 bg-neutral-400 rounded-full" id="Display">
+        </button>
+    </div>
+   <audio src="" id="audio" autoplay></audio>
+</section>
+
+<script>
+window.addEventListener("play-song", (event) => {
+    const song = event.detail;
+    document.getElementById("album-image").src = song.album.image.url;
+    document.getElementById("title").textContent = song.title;
+    document.getElementById("audio").src = song.audio.url;
+});
+</script>
