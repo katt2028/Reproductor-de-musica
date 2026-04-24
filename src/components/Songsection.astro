@@ -1,25 +1,33 @@
-<section class=""
-    <div>
-        <img src="" id="album-image" />
+<section
+    class="flex-2"
+    <section
+    class="flex justify-center items-center h-screen bg-neutral-900"
+>
+    <div
+        class="rounded-full w-75 h-75 overflow-hidden border-2 border-neutral-700"
+    >
+        <img
+            src="omaaar.jpg"
+            alt="Omar Courtz Perfil"
+            class="w-full h-full object-cover"
+            id="album-image"        
+        />
     </div>
-
-    <div>
-        <p class="text-sm opacity-50" id="album"></p>
-        <h2 class="text-lg font-semibold" id="title"></h2>
-    </div>
-
-    <div>
-        <button class="px-20 py-20 bg-neutral-400 rounded-full" id="Display">
-        </button>
-    </div>
-   <audio src="" id="audio" autoplay></audio>
 </section>
 
+<div>
+    <p class="text-sm opacity-50" id="album"></p>
+    <h2 class="text-lg font-semibold" id="title"></h2>
+</div>
+
+<audio src="" id="audio" autoplay></audio>
+
 <script>
-window.addEventListener("play-song", (event) => {
-    const song = event.detail;
-    document.getElementById("album-image").src = song.album.image.url;
-    document.getElementById("title").textContent = song.title;
-    document.getElementById("audio").src = song.audio.url;
-});
+    window.addEventListener("play-song", (event) => {
+        const song = event.detail;
+        document.getElementById("album-image").src = song.album.image.url;
+        document.getElementById("title").textContent = song.title;
+        document.getElementById("album").textContent = song.album.title;
+        document.getElementById("audio").src = song.audio.url;
+    });
 </script>

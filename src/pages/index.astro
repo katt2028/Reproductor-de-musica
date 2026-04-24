@@ -11,15 +11,18 @@ const { songs } = await response.json();
 ---
 
 <Layout>
-    <div>
-        <Songsection />
-    </div>
-    <div>
-        {
-            songs.map((song) => {
-                return <Tarjetasmusic song={song} />;
-            })
-        }
-    </div>
+    <div class="flex">
+        <div class="flex-1">
+            {
+                songs.map((song) => {
+                    return <Tarjetasmusic song={song} />;
+                })
+            }
+        </div>
+        
+        <div class="flex-1 px-50 py-50">
+            <Songsection />
+        </div>
 
+    </div>
 </Layout>
